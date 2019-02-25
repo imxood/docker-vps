@@ -1,24 +1,45 @@
 {
-	"log": {
-		"loglevel": "warning"
-	},
-	"inbound": {
-		"protocol": "vmess",
-		"port": 8080,
-		"settings": {
-			"clients": [
-				{
-					"id": "your_uuid",
-					"alterId": 64
-				}
-			]
+	"inbounds": [
+		{
+			"port": 443,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "your_uuid",
+						"level": 1,
+						"alterId": 64
+					}
+				]
+			}
 		},
-		"streamSettings": {
-			"network": "ws"
+		{
+			"port": 444,
+			"protocol": "shadowsocks",
+			"settings": {
+				"method": "aes-256-cfb",
+				"password": "sspassword"
+			}
 		}
-	},
-	"outbound": {
-		"protocol": "freedom",
-		"settings": {}
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"settings": {}
+		},
+		{
+			"protocol": "blackhole",
+			"settings": {},
+			"tag": "blocked"
+		}
+	],
+	"routing": {
+		"rules": [
+			{
+				"type": "field",
+				"ip": ["geoip:private"],
+				"outboundTag": "blocked"
+			}
+		]
 	}
 }
