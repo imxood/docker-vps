@@ -6,7 +6,7 @@
 			"settings": {
 				"clients": [
 					{
-						"id": "your_uuid",
+						"id": "UUID",
 						"level": 1,
 						"alterId": 64
 					}
