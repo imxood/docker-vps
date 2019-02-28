@@ -16,7 +16,7 @@ FROM alpine:latest
 # && rm -rf v2ray-v$VER-linux-64 \
 # && chgrp -R 0 /v2raybin \
 # && chmod -R g+rwX /v2raybin
-COPY /v2ray/v2ray_program /v2ray
+COPY v2ray /v2ray
 COPY v2ray/config.json /v2ray/config.json
 EXPOSE 8080
 CMD ["/bin/sh"]
