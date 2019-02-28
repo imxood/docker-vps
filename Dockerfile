@@ -3,7 +3,7 @@ FROM alpine:latest
 #ENV CONFIG_JSON=none CERT_PEM=none KEY_PEM=none VER=3.35
 
 #RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
-# && mkdir -m 777 /v2raybin \ 
+# && mkdir -m 777 /v2raybin \
 # && cd /v2raybin \
 # && curl -L -H "Cache-Con#trol: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
 # && unzip v2ray.zip \
@@ -16,8 +16,7 @@ FROM alpine:latest
 # && rm -rf v2ray-v$VER-linux-64 \
 # && chgrp -R 0 /v2raybin \
 # && chmod -R g+rwX /v2raybin
-COPY v2ray /v2ray
-RUN chmod +x /v2ray/entrypoint.sh
-ENTRYPOINT /v2ray/entrypoint.sh
-
+COPY /v2ray/v2ray_program /v2ray
+COPY v2ray/config.json /v2ray/config.json
 EXPOSE 8080
+CMD ["/bin/sh"]
