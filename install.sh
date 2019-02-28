@@ -17,7 +17,7 @@ if ! -f "$V2RAY_PATH/v2ray.zip"; then
 fi
 
 rm -rf $V2RAY_PROGRAM_PATH
-unzip v2ray.zip -d $V2RAY_PROGRAM_PATH
+unzip $V2RAY_PATH/v2ray.zip -d $V2RAY_PROGRAM_PATH
 chmod +x $V2RAY_PROGRAM_PATH/v2ray $V2RAY_PROGRAM_PATH/v2ctl
 
 # 生成docker image
