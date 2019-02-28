@@ -34,7 +34,7 @@
             "port": 10001,
             "settings": {
                 "method": "aes-256-cfb",
-                "password": "233blog.com",
+                "password": "password",
                 "network": "tcp,udp",
                 "level": 1,
                 "ota": false
