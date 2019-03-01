@@ -15,12 +15,10 @@
 3. 执行:
   
 	bash install.sh
-  
-	# 会自动下载docker，并根据当前目录的Dockerfile，创建一个docker镜像.
+	#会自动下载docker，并根据当前目录的Dockerfile，创建一个docker镜像.
   
   
 4. 如果3执行顺利, 执行:
 
 	bash run_docker.sh
-  
-	# 即可成功运行docker容器
+	#即可成功运行docker容器
