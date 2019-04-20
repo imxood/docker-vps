@@ -1,0 +1,53 @@
+{
+	"log": {
+		"access": "",
+		"error": "",
+		"loglevel": "warning"
+	},
+	"inbounds": [
+		{
+			"port": 1080,
+			"listen": "127.0.0.1",
+			"protocol": "socks",
+			"settings": {
+				"udp": true
+			}
+		},
+		{
+			"port": 1081,
+			"protocol": "http",
+			"settings": {}
+		},
+		{
+			"port": 1082,
+			"protocol": "dokodemo-door",
+			"settings": {
+				"network": "tcp,udp",
+				"timeout": 30,
+				"followRedirect": true
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "vmess",
+			"settings": {
+				"vnext": [
+					{
+						"address": "139.180.215.14",
+						"port": 10000,
+						"users": [{ "id": "ae6f6377-7f79-4b29-977b-c1a62ceab7f3" }]
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "kcp"
+			}
+		},
+		{
+			"protocol": "freedom",
+			"tag": "direct",
+			"settings": {}
+		}
+	]
+}

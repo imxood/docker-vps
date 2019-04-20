@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # install docker and other tools
-if [ -z "$(which docker)" ]; then
+if [ -z "0" -a -z "$(which docker)" ]; then
 	sudo apt install -y curl git unzip wget
-	curl -sSL https://get.daocloud.io/docker | sh
+	curl -sSL https://get.daocloud.io/docker | sudo sh
 fi
 
 # download and extract the v2ray.zip
+VER="4.18.0"
 V2RAY_PATH="v2ray"
 
 if [ ! -f "v2ray.zip" ]; then

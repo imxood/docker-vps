@@ -1,0 +1,58 @@
+{
+	"log": {
+		"access": "",
+		"error": "",
+		"loglevel": "warning"
+	},
+	"inbounds": [
+		{
+			"port": 10000,
+			"listen": "0.0.0.0",
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "ae6f6377-7f79-4b29-977b-c1a62ceab7f3",
+						"level": 1,
+						"alterId": 233
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "kcp"
+			}
+		},
+		{
+			"protocol": "shadowsocks",
+			"port": 10001,
+			"settings": {
+				"method": "aes-256-cfb",
+				"password": "sssmx12345678",
+				"network": "tcp,udp",
+				"level": 1,
+				"ota": false
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"settings": {}
+		},
+		{
+			"protocol": "blackhole",
+			"settings": {},
+			"tag": "blocked"
+		},
+		{
+			"protocol": "freedom",
+			"settings": {},
+			"tag": "direct"
+		},
+		{
+			"protocol": "mtproto",
+			"settings": {},
+			"tag": "tg-out"
+		}
+	]
+}
