@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # install docker and other tools
 if [ -z "0" -a -z "$(which docker)" ]; then
 	sudo apt install -y curl git unzip wget
